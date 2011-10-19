@@ -16,6 +16,20 @@ describe Normalize do
       it 'normalizes the given value with the given normalizer' do
         normalizer.normalize_value("string", -> input { input.upcase }).should == "STRING"
       end
+      
+      it 'does not normalize the value if it is empty' do
+        normalization = mock
+        normalization.should_not_receive(:call)
+        
+        normalizer.normalize_value('', normalization)
+      end
+      
+      it 'does not normalize the value if it is nil' do
+        normalization = mock
+        normalization.should_not_receive(:call)
+        
+        normalizer.normalize_value(nil, normalization)
+      end
     end
   end
   

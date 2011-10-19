@@ -4,7 +4,11 @@ module Normalize
   extend ActiveSupport::Concern
   
   def normalize_value(value, normalizer)
-    normalizer.call(value)
+    if value.blank?
+      value
+    else
+      normalizer.call(value)
+    end
   end
   
   module ClassMethods
