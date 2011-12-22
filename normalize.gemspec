@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name           = 'normalize'
-  s.version        = '0.0.0'
+  s.version        = '0.0.1'
   s.platform       = Gem::Platform::RUBY
   s.authors        = ['Tom-Eric Gerritsen']
-  s.email          = 'ik@tom-eric.info'
-  s.homepage       = 'https://github.com/tomeric/normalize'
+  s.email          = 'tomeric@eet.nu'
+  s.homepage       = 'https://github.com/eet-nu/normalize'
   s.summary        = 'The attribute normalizer.'
   s.description    = 'The attribute normalizer.'
   s.files          = `git ls-files`.split("\n")
