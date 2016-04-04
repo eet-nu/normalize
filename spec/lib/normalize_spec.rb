@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Normalize do
   it 'is included in ActiveRecord::Base' do
-    ActiveRecord::Base.should include(Normalize)
+    expect( ActiveRecord::Base ).to include(Normalize)
   end
   
   describe 'instance methods' do
@@ -14,7 +14,9 @@ describe Normalize do
     
     describe '#normalize_value' do
       it 'normalizes the given value with the given normalizer' do
-        normalizer.normalize_value("string", -> input { input.upcase }).should == "STRING"
+        expect(
+          normalizer.normalize_value("string", -> input { input.upcase })
+        ).to eql 'STRING'
       end
     end
   end
@@ -30,17 +32,17 @@ describe Normalize do
     
     it 'normalizes values with a normalizer class' do
       object.title = 'A Bugs Life'
-      object.title.should == 'A BUGS LIFE'
+      expect(object.title).to eql 'A BUGS LIFE'
     end
 
     it 'normalizes values with a normalizer class specified with an options hash' do
       object.author = 'jack jones'
-      object.author.should == 'Jack Jones'
+      expect(object.author).to eql 'Jack Jones'
     end
 
     it 'normalizes values with a lambda specified with an options hash' do
       object.isbn = '123-456-7890'
-      object.isbn.should == '1234567890'
+      expect(object.isbn).to eql '1234567890'
     end
   end
   
@@ -56,7 +58,7 @@ describe Normalize do
     
     it 'normalizes values with a normalizer class' do
       object.title = 'A Bugs Life'
-      object.title.should == 'A BUGS LIFE'
+      expect(object.title).to eql 'A BUGS LIFE'
     end
   end
 end
