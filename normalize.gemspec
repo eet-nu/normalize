@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name           = 'normalize'
-  s.version        = '0.0.1'
+  s.version        = '0.2.0'
   s.platform       = Gem::Platform::RUBY
   s.authors        = ['Tom-Eric Gerritsen']
   s.email          = 'tomeric@eet.nu'
