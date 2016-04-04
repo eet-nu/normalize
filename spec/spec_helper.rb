@@ -2,7 +2,8 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'normalize'
 
-ActiveRecord::Base.silence do
+logger = ActiveSupport::Logger.new("log/test.log")
+logger.silence(Logger::INFO) do
   ActiveRecord::Migration.verbose = false
   ActiveRecord::Base.configurations = { 'test' => { adapter: 'sqlite3', database: ':memory:' } }
   ActiveRecord::Base.establish_connection :test

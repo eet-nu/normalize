@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name           = 'normalize'
-  s.version        = '0.0.1'
+  s.version        = '0.2.0'
   s.platform       = Gem::Platform::RUBY
   s.authors        = ['Tom-Eric Gerritsen']
   s.email          = 'tomeric@eet.nu'
@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.test_files     = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables    = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths  = ['lib']
-  s.add_dependency 'activerecord', '~> 3.0'
+  s.add_dependency 'activerecord', '>= 4.0.2'
 end
